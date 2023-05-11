@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Pricing from "../Pricing/Pricing";
 
 const SubscriptionPlan = () => {
-  const [vegToggle, setVegToggle] = useState(false);
+  const [nonvegToggle, setNonvegToggle] = useState(false);
   const [timeToggle, setTimeToggle] = useState(false);
   const [selectedArray, setSelectedArray] = useState([]);
   const [itemArray, setItemArray] = useState([]);
@@ -55,10 +55,10 @@ const SubscriptionPlan = () => {
               <div>
                 <button>Veg</button>
                 <button
-                  onClick={() => setVegToggle(!vegToggle)}
+                  onClick={() => setNonvegToggle(!nonvegToggle)}
                   style={{
-                    backgroundColor: vegToggle ? "#80B53B" : "#ffffff",
-                    color: vegToggle ? "#ffffff" : "#000000",
+                    backgroundColor: nonvegToggle ? "#80B53B" : "#ffffff",
+                    color: nonvegToggle ? "#ffffff" : "#000000",
                     border: "1px solid #00000015",
                   }}
                 >
@@ -89,7 +89,7 @@ const SubscriptionPlan = () => {
           <div></div>
           <div>Individual</div>
           <div>
-            {itemArray.map((item, index) => (
+            {itemArray.map((item, index) => ( 
               <div className="dish-item" key={index}>
                 <input type="checkbox" onClick={() => addItem(item)} />
                 <img src={item.imgUrl.stringValue} alt="dishimg" />
@@ -104,7 +104,6 @@ const SubscriptionPlan = () => {
         {selectedArray.length !== 0 && (
           <Pricing
             selectedArray={selectedArray}
-            itemArray={itemArray}
             net={net}
           />
         )}

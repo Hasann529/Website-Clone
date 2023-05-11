@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Pricing.scss";
 import Plan from "./Plan";
+import { db } from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
-const PlanArray = [
-  { days: 3, expensiveness: 4 },
-  { days: 7, expensiveness: 3 },
-  { days: 15, expensiveness: 2 },
-  { days: 30, expensiveness: 1 },
-];
 
 const Pricing = ({ net }) => {
+  const [planArray, setPlanArray] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "Plans"));
+
+        querySnapshot.docs.map((doc) =>
+          setPlanArray((prev) => [
+            ...prev,
+            doc._document.data.value.mapValue.fields,
+          ])
+        );
+
+        setPlanArray((prev) =>
+          prev.sort((a, b) => a.days.integerValue - b.days.integerValue)
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    setPlanArray([]);
+    getData();
+  }, []);
+
   return (
     <div className="pricing">
-      {PlanArray.map((plan) => (
-        <Plan plan={plan} key={plan.days} net={net} />
+      {planArray.map((plan) => (
+        <Plan
+          plan={plan}
+          key={plan.days.integerValue}
+          net={net}
+        />
       ))}
     </div>
   );
