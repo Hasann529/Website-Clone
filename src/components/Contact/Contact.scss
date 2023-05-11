@@ -1,0 +1,27 @@
+.contact{
+    width: 93px;
+    height: 43px;
+    background-color: #e9901b;
+    position: fixed;
+    right: .15rem;
+    top: 5rem;
+    z-index: 1000;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    >:nth-child(1){
+       background-color: white;
+       width: 32px;
+       height: 32px;
+       padding: .35rem;
+       border-radius: 50%;
+       cursor: pointer;
+    }
+    >:nth-child(2){
+       width: 32px;
+       height: 32px;
+       cursor: pointer;
+    }
+}
