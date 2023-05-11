@@ -118,20 +118,10 @@
             height: 22px;
             width: 22px;
             border-radius: 4px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-           background-color:#eed;
+            accent-color: #90ca43;
            
           }
-          >input:checked{
-            background-color: #80b53b;
-           
-          }
-         
-        
-            
-    
+      
           > img {
             width: 40%;
           }
@@ -150,6 +140,7 @@
             border-radius: 5px;
             font-weight: 600;
             gap: .3rem;
+            cursor: pointer;
             >svg{
                 color: #80b53b;
             }

@@ -16,25 +16,8 @@
          border-radius: 3px;
          top: .5rem;
          left: .5rem;
-         -webkit-appearance: none;
-         -moz-appearance: none;
-         appearance: none;
-        background-color:#eed;
-        
         
     }
-    >:nth-child(1):checked{
-        background-color:#80b53b;
-        content: "\f00c";
-    }
-    input[type="radio"]:checked + before {
-        content: "✔";
-        font-family: 'lucida grande';
-        font-size: 45px;
-        line-height: 60px;
-        text-align: center;
-      }
-
 
     >:nth-child(2){
          font-size: 16px;

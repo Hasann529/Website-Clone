@@ -2,6 +2,7 @@ import React from "react";
 import "./Plan.scss";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 
+
 const Plan = ({ plan, net }) => {
   return (
     <div className="plan">
