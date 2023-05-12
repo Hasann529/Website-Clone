@@ -39,7 +39,9 @@ const SubscriptionPlan = () => {
         : [...prev, item.name.stringValue]
     );
     setNet((prev) =>
-      selectedArray.includes(item.name.stringValue) ? Number(prev) - Number(item.price.integerValue) : Number(prev) + Number(item.price.integerValue)
+      selectedArray.includes(item.name.stringValue)
+        ? Number(prev) - Number(item.price.integerValue)
+        : Number(prev) + Number(item.price.integerValue)
     );
   };
 
@@ -89,7 +91,7 @@ const SubscriptionPlan = () => {
           <div></div>
           <div>Individual</div>
           <div>
-            {itemArray.map((item, index) => ( 
+            {itemArray.map((item, index) => (
               <div className="dish-item" key={index}>
                 <input type="checkbox" onClick={() => addItem(item)} />
                 <img src={item.imgUrl.stringValue} alt="dishimg" />
@@ -102,10 +104,7 @@ const SubscriptionPlan = () => {
           </div>
         </div>
         {selectedArray.length !== 0 && (
-          <Pricing
-            selectedArray={selectedArray}
-            net={net}
-          />
+          <Pricing selectedArray={selectedArray} net={net} />
         )}
         {selectedArray.length !== 0 && <button>Proceed</button>}
       </div>
