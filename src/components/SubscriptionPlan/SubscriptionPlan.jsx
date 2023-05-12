@@ -39,7 +39,7 @@ const SubscriptionPlan = () => {
         : [...prev, item.name.stringValue]
     );
     setNet((prev) =>
-      selectedArray.includes(item.name.stringValue) ? prev - 1 : prev + 1
+      selectedArray.includes(item.name.stringValue) ? Number(prev) - Number(item.price.integerValue) : Number(prev) + Number(item.price.integerValue)
     );
   };
 
