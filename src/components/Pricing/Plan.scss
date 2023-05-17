@@ -1,6 +1,6 @@
 .plan {
-  width: 235px;
-  height: 235px;
+  min-width: 235px;
+  min-height: 235px;
   border-radius: 5px;
   border: 1px solid #00000020;
   display: flex;
@@ -69,3 +69,9 @@
   }
 }
 
+@media screen and (max-width:992px) {
+ .plan{
+  min-width: 205px;
+  min-height: 205px;
+ }
+}

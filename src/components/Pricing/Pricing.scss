@@ -3,12 +3,14 @@
     width: 100%;
     gap: 3rem;
     padding: 1rem;
-   justify-content: center;
-   flex-wrap: wrap;
+    overflow-x: auto;
+ 
+  
+
+}
+.pricing::-webkit-scrollbar{
+    display: none;
 }
 
-@media screen and (max-width:768px) {
-    .pricing{
-        gap: 1rem;
-    }
-}
+
+
